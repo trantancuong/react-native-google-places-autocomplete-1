@@ -19,7 +19,6 @@ import debounce from "lodash.debounce";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
 
-
 const WINDOW = Dimensions.get("window");
 
 const defaultStyles = {
@@ -612,11 +611,12 @@ export default class GooglePlacesAutocomplete extends Component {
       <ScrollView
         style={{ flex: 1 }}
         scrollEnabled={this.props.isRowScrollable}
-        keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}
+        keyboardShouldPersistTaps="handled"
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
+   
         <TouchableHighlight
           style={{ width: WINDOW.width }}
           onPress={() => this._onPress(rowData)}
@@ -917,3 +917,5 @@ module.exports = {
   GooglePlacesAutocomplete,
   create
 };
+
+
